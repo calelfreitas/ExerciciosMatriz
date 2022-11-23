@@ -1,0 +1,26 @@
+def matrizcriar(nlinhas,ncolunas):
+    matriz=[]
+    for l in range(nlinhas):
+        linha=[]
+        coluna=[]
+        for c in range(ncolunas):
+            valor=int(input("Digite os valores para [{l},{c}] linha:")
+            linha.append(valor)
+            print()
+        matriz.append(linha)
+    for m in range(nlinhas):
+        for n in range(ncolunas):
+            print(f"[{matriz[m][n]:^5}]", end='')
+        print()
+    return matriz
+def main():
+    for i in range(2):
+        linhas=int(input("Digite o número de linhas da matriz:"))
+        colunas=int(input("Digite o número de colunas da matriz:"))
+        if linhas==colunas:
+            matrizcriar(linhas,colunas)
+            print()
+        else:
+            print("Número de linhas e colunas incompatíveis. Não há como subtrair ou somar as matrizes.")
+            break
+main()
