@@ -1,26 +1,40 @@
-def matrizcriar(nlinhas,ncolunas):
+def exibirmatriz(matriz):
+    for linha in matriz:
+        print(linha)
+if __name__ == '__main__':
+    m=int(input("Entre com a quantidade de linhas: "))
+    n=int(input("Entre com a quantidade de colunas:"))
     matriz=[]
-    for l in range(nlinhas):
+    for l in range(m):
         linha=[]
-        coluna=[]
-        for c in range(ncolunas):
-            valor=int(input("Digite os valores para [{l},{c}] linha:")
+        for c in range(n):
+            valor=int(input(f"Insira aqui os elementos da linha {l} coluna {c}:"))
             linha.append(valor)
-            print()
         matriz.append(linha)
-    for m in range(nlinhas):
-        for n in range(ncolunas):
-            print(f"[{matriz[m][n]:^5}]", end='')
+    for l in range(m):
+        for c in range(n):
+            print(f"[{matriz[l][c]:^5}]", end='')
         print()
-    return matriz
-def main():
-    for i in range(2):
-        linhas=int(input("Digite o número de linhas da matriz:"))
-        colunas=int(input("Digite o número de colunas da matriz:"))
-        if linhas==colunas:
-            matrizcriar(linhas,colunas)
-            print()
-        else:
-            print("Número de linhas e colunas incompatíveis. Não há como subtrair ou somar as matrizes.")
-            break
-main()
+        exibirmatriz
+def somamatriz(M1,M2):
+    M3=[]
+    nlinhasM1, nlinhasM2= len(M1), len(M2)
+    ncolunasM1,ncolunasM2=len(M1[0]),len(M2[0])
+    if (nlinhasM1==nlinhasM2) and (ncolunasM1==ncolunasM2):
+        for i in range(nlinhasM1):
+            linha=[0]*ncolunasM1
+            M3.append(linha)
+            for j in range(ncolunasM1):
+                M3[i][j]=M1[i][j]+M2[i][j]
+    else:
+        print("Não há como somar ou subtrair as matrizes.")
+def oposta(M):
+    Opost=[]
+    for i in range(len[M]):
+        linha=[0]*len(M[0])
+        Opost.append(linha)
+        for j in range(len(M[0])):
+            Opost[i][j]= -M[i][j]
+    return opost
+def subtrair(M1,M2):
+    return somarmatriz(M1,oposta(M2))
